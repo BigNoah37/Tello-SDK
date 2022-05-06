@@ -9,8 +9,10 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import tello.modes.ModeManger;
+import tello.modes.mode.CrazyMode;
 import tello.modes.mode.HoverLeftMode;
 import tello.modes.mode.HoverMode;
+import tello.modes.mode.SquareMode;
 import tello.server.constant.ServerConstant;
 import tello.server.handler.ServerResourceHandler.Handler404;
 
@@ -39,6 +41,8 @@ public class HandlerManager implements HttpHandler {
 
         modeManger.addMode(new HoverMode("Hover", "Hovers 50cm up"));
         modeManger.addMode(new HoverLeftMode("Hover Left", "Hover 50cm up, and goes 50cm left"));
+        modeManger.addMode(new SquareMode("Square Mode", "Does a square"));
+        modeManger.addMode(new CrazyMode("Crazy Mode", "IDK just make sure its a new battery"));
     }
 
     public static ModeManger getModeManger() {
